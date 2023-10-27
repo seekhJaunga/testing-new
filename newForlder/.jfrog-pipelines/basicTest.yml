@@ -1,5 +1,5 @@
 resources:
-  - name: resource_2
+  - name: resource_2_new_r
     type: GitRepo
     configuration:
       gitProvider: test
@@ -21,7 +21,7 @@ pipelines:
           affinityGroup: trigger
           timeoutSeconds: 5
           inputResources:
-            - name: resource_2
+            - name: resource_2_new_r
         execution:
           onExecute:
-            - echo $res_resource_2_path
+            - echo $resource_2_new_r_path
