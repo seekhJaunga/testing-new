@@ -1,0 +1,27 @@
+resources:
+  - name: resource_2
+    type: GitRepo
+    configuration:
+      gitProvider: test
+      path:  seekhJaunga/Ekart
+      buildOn:
+         releaseCreate: true
+         commit: false
+
+pipelines:
+  - name: single_test_change
+    configuration:
+      environmentVariables:
+        readOnly:
+          env2: "test_p2"
+    steps:
+      - name: trigger_1
+        type: Bash
+        configuration:
+          affinityGroup: trigger
+          timeoutSeconds: 5
+          inputResources:
+            - name: resource_2
+        execution:
+          onExecute:
+            - echo $res_resource_2_path
