@@ -9,7 +9,7 @@ resources:
          commit: false
 
 pipelines:
-  - name: single_test
+  - name: single_test_new_new_new
     configuration:
       environmentVariables:
         readOnly:
